@@ -4,7 +4,7 @@ $(document).ready(function(){
     var remaining = 140 - input.length;
     var counter = $(this).closest("form").find(".counter");
     counter.text(remaining);
-    if (remaining < 115) {
+    if (remaining < 0) {
       counter.addClass("error");
     } else {
       counter.removeClass("error");
