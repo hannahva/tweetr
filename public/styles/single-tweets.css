@@ -1,0 +1,87 @@
+.single-tweet {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin: 2em;
+  opacity: 0.8;
+}
+
+.single-tweet:hover {
+  opacity: 1;
+}
+
+
+.single-tweet header {
+  background-color: #eee;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  height: 77px;
+  padding: 1px;
+}
+
+.avatar {
+  border-radius: 5px;
+  float: left;
+  height: 60px;
+  margin: 7px 10px 7px 7px;
+  width: 60px;
+}
+
+.single-tweet h3 {
+  display: inline-block;
+  font-size: 2em;
+  margin-top: 2px;
+}
+
+.single-tweet h4 {
+  color: #afafaf;
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 300;
+  margin-right: 7px;
+  margin-top: 14px;
+  float: right;
+}
+
+.single-tweet p {
+  font-size: 1em;
+  padding: 10px
+}
+
+.single-tweet footer {
+  border-top: 1px solid #eee;
+  padding: 0;
+}
+
+.single-tweet h5 {
+  display:inline-block;
+  font-size: 0.7em;
+  font-weight: 300;
+  margin: 0;
+  padding: 5px 0 5px 5px;
+}
+
+.icons {
+  display:inline-block;
+  float: right;
+  margin: 4px 5px 0 5px;
+}
+
+.icons .save {
+  height: 15px;
+  width: 15px;
+}
+
+.icons .like {
+  height: 15px;
+  width: 15px;
+}
+
+.icons .retweet {
+  height: 15px;
+  width: 15px;
+}
+
+
+
+
+
