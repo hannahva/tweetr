@@ -1,0 +1,38 @@
+.new-tweet {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin: 2em;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+form {
+
+  }
+
+form input {
+
+}
+
+.new-tweet h2 {
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+}
+
+textarea {
+  border: 1px solid #aaa;
+  height: 60px;
+  line-height: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.counter {
+  float: right;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 2em;
+  padding-right: 5px;
+}
+
