@@ -62,14 +62,15 @@ function handleNewTweet (event){
       data: $form.serialize()
     })
       .done($form[0].reset())
-      .done(loadTweets);
+      .done(loadTweets)
+      .done($(".counter").text("140"));
     };
 }
 
 const $form = $('#create-tweet');
 $form.on('submit', handleNewTweet)
 
-
+//gets JSON object
 function loadTweets (tweets){
   $.ajax('/tweets')
     .done(renderTweets);

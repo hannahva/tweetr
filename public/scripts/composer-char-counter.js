@@ -10,8 +10,5 @@ $(document).ready(function(){
       $counter.removeClass("error");
     }
   });
-  const $form = $('#create-tweet');
-  $form.on('submit', function(event){
-    $(".counter").text("140");
-  })
+
 });
