@@ -38,6 +38,7 @@ function createTweetElement (tweet) {
 //takes in array of objects, calls createTweetElement on each of
 //them, rendering them to the page
 function renderTweets (tweets){
+  $("#tweets-container").empty();
   tweets.forEach(function(tweetObj){
     var tweet = createTweetElement(tweetObj);
     $("#tweets-container").prepend(tweet);
@@ -48,6 +49,8 @@ function renderTweets (tweets){
 //prevents redirect, accesses form text and
 //adds to JSON object array at /tweets
 //if tweet empty or over-length, won't do ajax request
+//once ajax done, clears text field, returns placeholder
+//and loads && renders the tweet
 function handleNewTweet (event){
     event.preventDefault();
     const $form = $(this);
@@ -58,12 +61,14 @@ function handleNewTweet (event){
       url: '/tweets',
       data: $form.serialize()
     })
-      .done(console.log("ajax request done!"));
+      .done($form[0].reset())
+      .done(loadTweets);
     };
 }
 
 const $form = $('#create-tweet');
-$form.on('submit', handleNewTweet);
+$form.on('submit', handleNewTweet)
+
 
 function loadTweets (tweets){
   $.ajax('/tweets')
