@@ -47,16 +47,19 @@ function renderTweets (tweets){
 
 //prevents redirect, accesses form text and
 //adds to JSON object array at /tweets
+//if tweet empty or over-length, won't do ajax request
 function handleNewTweet (event){
     event.preventDefault();
     const $form = $(this);
-    console.log($form.serialize())
+    const $formText = $form.find("textarea").val();
+    if(validateTweet($formText)){
     $.ajax({
       type: 'POST',
       url: '/tweets',
       data: $form.serialize()
     })
       .done(console.log("ajax request done!"));
+    };
 }
 
 const $form = $('#create-tweet');
@@ -69,6 +72,19 @@ function loadTweets (tweets){
 
 loadTweets();
 
+
+//makes sure tweet is not empty or over-length
+function validateTweet (tweetText){
+  if(!tweetText){
+    alert("Your tweet is empty!")
+    return false;
+  } else if(tweetText.length > 140){
+    alert("A bit long winded this time!")
+    return false;
+  } else {
+    return true;
+  }
+}
 
 
 });
