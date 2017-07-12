@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
 
+//Header, TweetBody, Footer create sections of info
+//to append in createTweetElement function
 function createHeader (tweet) {
   var $header = $("<header>")
       .append($("<img class='avatar' src='" + tweet.user.avatars.small + "'>"))
@@ -24,6 +26,7 @@ function createFooter (tweet){
   return $footer;
 }
 
+//appends html to #tweets-container with given tweet object info
 function createTweetElement (tweet) {
   var $tweet = $("<article class='tweet'>")
     .append(createHeader(tweet))
@@ -32,12 +35,32 @@ function createTweetElement (tweet) {
   return $tweet;
 }
 
+//takes in array of objects, calls createTweetElement on each of
+//them, rendering them to the page
 function renderTweets (tweets){
   tweets.forEach(function(tweetObj){
     var tweet = createTweetElement(tweetObj);
     $("#tweets-container").append(tweet);
   });
 }
+
+
+//prevents redirect, accesses form text and
+//adds to JSON object array at /tweets
+function handleNewTweet (event){
+    event.preventDefault();
+    const $form = $(this);
+    console.log($form.serialize())
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $form.serialize()
+    })
+      .done(console.log("ajax request done!"));
+}
+
+const $form = $('#create-tweet');
+$form.on('submit', handleNewTweet);
 
 });
 
