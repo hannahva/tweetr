@@ -40,7 +40,7 @@ function createTweetElement (tweet) {
 function renderTweets (tweets){
   tweets.forEach(function(tweetObj){
     var tweet = createTweetElement(tweetObj);
-    $("#tweets-container").append(tweet);
+    $("#tweets-container").prepend(tweet);
   });
 }
 
@@ -61,6 +61,15 @@ function handleNewTweet (event){
 
 const $form = $('#create-tweet');
 $form.on('submit', handleNewTweet);
+
+function loadTweets (tweets){
+  $.ajax('/tweets')
+    .done(renderTweets);
+};
+
+loadTweets();
+
+
 
 });
 
