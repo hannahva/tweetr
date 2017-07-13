@@ -1,3 +1,7 @@
+//counts number of characters entered into textarea
+//and updates counter with characters remaining.
+//if over-length, counter turns red. (/styles/new-tweet.css)
+
 $(document).ready(function(){
   $(".new-tweet textarea").on("keyup", function(){
     var $input = $(this).val();

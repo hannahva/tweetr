@@ -37,6 +37,7 @@ function createTweetElement (tweet) {
 
 //takes in array of objects, calls createTweetElement on each of
 //them, rendering them to the page
+//using .prepend renders them in chronological order
 function renderTweets (tweets){
   $("#tweets-container").empty();
   tweets.forEach(function(tweetObj){
@@ -48,9 +49,9 @@ function renderTweets (tweets){
 
 //prevents redirect, accesses form text and
 //adds to JSON object array at /tweets
-//if tweet empty or over-length, won't do ajax request
-//once ajax done, clears text field, returns placeholder
-//and loads && renders the tweet
+//if tweet empty or over-length, won't do ajax request.
+//once ajax done, clears text field, returns placeholder,
+//resets character counter and loads && renders the tweet
 function handleNewTweet (event){
     event.preventDefault();
     const $form = $(this);
@@ -70,7 +71,6 @@ function handleNewTweet (event){
 const $form = $('#create-tweet');
 $form.on('submit', handleNewTweet)
 
-//gets JSON object
 function loadTweets (tweets){
   $.ajax('/tweets')
     .done(renderTweets);
@@ -80,6 +80,7 @@ loadTweets();
 
 
 //makes sure tweet is not empty or over-length
+//alerts user of either error
 function validateTweet (tweetText){
   if(!tweetText){
     alert("Your tweet is empty!")
