@@ -18,7 +18,7 @@ function createTweetBody (tweet){
 
 function createFooter (tweet){
   var $footer = $("<footer>")
-      .append($("<h5>").text(tweet.created_at))
+      .append($("<h5>").text(timeSince(tweet.created_at)))
       .append($("<span class='icons'>")
         .append($("<img class='save' src='/images/save.png'>"))
         .append($("<img class='retweet' src='/images/retweet.png'>"))
@@ -93,6 +93,38 @@ function validateTweet (tweetText){
   }
 }
 
+//takes in created_at in milliseconds and turns it into a readable
+//format, telling user how long since it was posted
+function timeSince (time) {
+  const now = Date.now();
+  const elapsed = now - time;
+  const diffMinutes = Math.floor((elapsed / 1000) / 60);
+  const diffHours = Math.floor(diffMinutes / 60);
+  const diffDays = Math.floor(diffHours/ 24);
+  if (diffDays > 365){
+    return "Over a year ago";
+  } else if (diffHours > 23){
+    if (diffDays === 1){
+      return diffDays + " day ago";
+    } else {
+      return diffDays + " days ago";
+    }
+  } else if (diffMinutes > 59){
+    if (diffHours === 1){
+      return diffHours + " hour ago";
+    } else {
+      return diffHours + " hours ago";
+    }
+  } else {
+    if (diffMinutes < 1) {
+      return "Just a moment ago";
+    } else if (diffMinutes === 1){
+      return diffMinutes + " minute ago";
+    } else {
+      return diffMinutes + " minutes ago";
+    }
+  }
+}
 
 });
 
