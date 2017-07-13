@@ -7,7 +7,7 @@ $(() => {
   $("section.new-tweet").hide();
   $button.on("click", () => {
     $("section.new-tweet").slideToggle(() => {
-      $(".new-tweet textarea").focus()
+      $(".new-tweet textarea").focus();
     });
   });
 });

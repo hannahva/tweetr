@@ -21,6 +21,16 @@ textarea {
   width: 100%;
 }
 
+.new-tweet input {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
+.new-tweet input:hover {
+  background-color: white;
+}
+
 .counter {
   float: right;
   font-size: 13px;
