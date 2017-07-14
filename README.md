@@ -1,8 +1,16 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery and AJAX for the front-end. Node, Express, and MongoDB make-up the back-end.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+It was built as an introduction to front-end development in week 3 of the Lighthouse Labs web development bootcamp.
+
+# Screenshots
+
+!["screenshot of home page"](https://github.com/hannahva/tweetr/blob/master/docs/tweeter%20home.png?raw=true)
+!["screenshot of flash message given when tweet is too long"](https://github.com/hannahva/tweetr/blob/master/docs/long%20winded%20message.png?raw=true)
+!["screenshot of flash message when a submit is tried with empty tweet box"](https://github.com/hannahva/tweetr/blob/master/docs/empty%20message.png?raw=true)
+!["screenshot of home page with text being entered"](https://github.com/hannahva/tweetr/blob/master/docs/tweeter%20home%202.png?raw=true)
+
 
 ## Getting Started
 
@@ -15,3 +23,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-Parser
+- Chance
+- Flash-message
+- MongoDB
+- MD5
